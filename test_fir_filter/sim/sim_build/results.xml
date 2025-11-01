@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1733800349" />
+    <testcase name="test_a" classname="test_fir3" file="/Users/smyl362/FPGAudioSphere/test_fir_filter/sim/test_fir3.py" lineno="27" time="0.14671707153320312" sim_time_ns="4400.001" ratio_time="29989.700271547805" />
+  </testsuite>
+</testsuites>

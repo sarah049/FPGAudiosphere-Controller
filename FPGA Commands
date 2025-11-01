@@ -1,0 +1,10 @@
+ # Commands
+    cd MIT/Sophomore\ Year/6.111/Labs/
+    source ~/6205_python/bin/activate      
+    lab-bc run ./ obj #if you are in labxx directory
+    openFPGALoader -b arty_s7_50 obj/final.bit
+    gtkwave file.fst
+    deactivate
+    iverilog -i -g2012
+
+    https://surfer-project.org

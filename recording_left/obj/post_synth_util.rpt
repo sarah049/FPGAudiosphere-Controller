@@ -1,0 +1,70 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Wed Dec 11 18:55:22 2024
+| Host         : eecs-digital-26 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_utilization -file obj/post_synth_util.rpt -hierarchical -hierarchical_depth 4
+| Design       : top_level
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+----------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|          Instance          |                             Module                             | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------------------+----------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| top_level                  |                                                          (top) |       3782 |       3775 |       0 |    7 | 5345 |     18 |      1 |         32 |
+|   (top_level)              |                                                          (top) |         14 |         14 |       0 |    0 |   82 |      0 |      0 |          0 |
+|   audio_in                 |                                                   i2s_receiver |          4 |          4 |       0 |    0 |   52 |      0 |      0 |          0 |
+|   audio_out                |                                                i2s_transmitter |          1 |          1 |       0 |    0 |   48 |      0 |      0 |          0 |
+|   audio_samples_bram       |                   xilinx_true_dual_port_read_first_2_clock_ram |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   buffer                   |                                                     i2s_buffer |          1 |          1 |       0 |    0 |    8 |      0 |      0 |          0 |
+|   clk_gen                  |                                             audio_rate_clk_gen |         89 |         89 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   clk_gen_1                |                                                      clk_wiz_0 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     inst                   |                                              clk_wiz_0_clk_wiz |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   hrir_left_coeff_brom     |                              xilinx_single_port_ram_read_first |          0 |          0 |       0 |    0 |    0 |      8 |      0 |          0 |
+|   hrir_right_coeff_brom    |              xilinx_single_port_ram_read_first__parameterized0 |          0 |          0 |       0 |    0 |    0 |      8 |      0 |          0 |
+|   left_fir                 |                                                     fir_filter |       1754 |       1754 |       0 |    0 | 2512 |      0 |      0 |         16 |
+|     (left_fir)             |                                                     fir_filter |        786 |        786 |       0 |    0 | 1598 |      0 |      0 |         16 |
+|     tree_stage_a           |                                             fir_tree_accum_8_9 |        404 |        404 |       0 |    0 |  389 |      0 |      0 |          0 |
+|     tree_stage_b           |                            fir_tree_accum_8__parameterized0_10 |        395 |        395 |       0 |    0 |  389 |      0 |      0 |          0 |
+|     tree_stage_c           |                                            fir_tree_accum_4_11 |        169 |        169 |       0 |    0 |  136 |      0 |      0 |          0 |
+|   right_fir                |                                                   fir_filter_0 |       1756 |       1756 |       0 |    0 | 2488 |      0 |      0 |         16 |
+|     (right_fir)            |                                                   fir_filter_0 |        788 |        788 |       0 |    0 | 1590 |      0 |      0 |         16 |
+|     tree_stage_a           |                                               fir_tree_accum_8 |        404 |        404 |       0 |    0 |  389 |      0 |      0 |          0 |
+|     tree_stage_b           |                               fir_tree_accum_8__parameterized0 |        395 |        395 |       0 |    0 |  389 |      0 |      0 |          0 |
+|     tree_stage_c           |                                               fir_tree_accum_4 |        169 |        169 |       0 |    0 |  120 |      0 |      0 |          0 |
+|   video_control            |                                               video_controller |        139 |        132 |       0 |    7 |  117 |      2 |      0 |          0 |
+|     (video_control)        |                                               video_controller |         12 |         12 |       0 |    0 |   41 |      0 |      0 |          0 |
+|     blue_ser               |                                                tmds_serializer |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     bram_null              |   xilinx_true_dual_port_read_first_2_clock_ram__parameterized0 |          1 |          1 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     bram_one               | xilinx_true_dual_port_read_first_2_clock_ram__parameterized0_1 |         37 |         37 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     green_ser              |                                              tmds_serializer_2 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     p10                    |                                       pipeline__parameterized1 |          1 |          0 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     p3                     |                                     pipeline__parameterized1_3 |          3 |          2 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     p4                     |                                     pipeline__parameterized1_4 |          1 |          0 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     p5                     |                                     pipeline__parameterized1_5 |          1 |          0 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     p8                     |                                       pipeline__parameterized0 |          3 |          0 |       0 |    3 |   18 |      0 |      0 |          0 |
+|     red_ser                |                                              tmds_serializer_6 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |          0 |
+|     tmds_blue              |                                                   tmds_encoder |          5 |          5 |       0 |    0 |    8 |      0 |      0 |          0 |
+|     tmds_green             |                                                 tmds_encoder_7 |          3 |          3 |       0 |    0 |    9 |      0 |      0 |          0 |
+|     tmds_red               |                                                 tmds_encoder_8 |          8 |          8 |       0 |    0 |   10 |      0 |      0 |          0 |
+|     vsg                    |                                                  video_sig_gen |         61 |         61 |       0 |    0 |   21 |      0 |      0 |          0 |
+|     xpm_cdc_pulse_inst     |                                                  xpm_cdc_pulse |          2 |          2 |       0 |    0 |    5 |      0 |      0 |          0 |
+|       (xpm_cdc_pulse_inst) |                                                  xpm_cdc_pulse |          2 |          2 |       0 |    0 |    3 |      0 |      0 |          0 |
+|       xpm_cdc_single_inst  |                                                 xpm_cdc_single |          0 |          0 |       0 |    0 |    2 |      0 |      0 |          0 |
+|   wizard_hdmi              |                                                cw_hdmi_clk_wiz |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   wizard_migcam            |                                                cw_fast_clk_wiz |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   write_addr_counter       |                                                    evt_counter |         24 |         24 |       0 |    0 |   24 |      0 |      0 |          0 |
++----------------------------+----------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+
+

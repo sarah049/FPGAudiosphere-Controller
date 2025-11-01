@@ -1,0 +1,73 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Dec  7 21:59:47 2024
+| Host         : eecs-digital-41 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_timing -file obj/post_place_timing.rpt
+| Design       : top_level
+| Device       : 7s50-csga324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Fully Placed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.364ns  (required time - arrival time)
+  Source:                 fir/p_0_out__2/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
+  Destination:            fir/mult_out_reg[4][12]/D
+                            (rising edge-triggered cell FDRE clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
+  Path Group:             gclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (gclk rise@10.000ns - gclk rise@0.000ns)
+  Data Path Delay:        5.508ns  (logic 4.133ns (75.036%)  route 1.375ns (24.964%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.777ns = ( 14.777 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.151ns
+    Clock Pessimism Removal (CPR):    0.253ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock gclk rise edge)       0.000     0.000 r  
+    N15                                               0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.440     1.440 r  clk_100mhz_IBUF_inst/O
+                         net (fo=1, estimated)        1.972     3.412    clk_100mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.508 r  clk_100mhz_IBUF_BUFG_inst/O
+                         net (fo=1181, estimated)     1.643     5.151    fir/clk_100mhz_IBUF_BUFG
+    DSP48_X0Y9           DSP48E1                                      r  fir/p_0_out__2/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y9           DSP48E1 (Prop_dsp48e1_CLK_P[12])
+                                                      4.009     9.160 r  fir/p_0_out__2/P[12]
+                         net (fo=1, estimated)        1.375    10.535    fir/p_0_out__2_n_93
+    SLICE_X9Y20          LUT5 (Prop_lut5_I0_O)        0.124    10.659 r  fir/mult_out[4][12]_i_1/O
+                         net (fo=1, routed)           0.000    10.659    fir/mult_out[4][12]_i_1_n_0
+    SLICE_X9Y20          FDRE                                         r  fir/mult_out_reg[4][12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock gclk rise edge)      10.000    10.000 r  
+    N15                                               0.000    10.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    10.000    clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.370    11.370 r  clk_100mhz_IBUF_inst/O
+                         net (fo=1, estimated)        1.873    13.244    clk_100mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.335 r  clk_100mhz_IBUF_BUFG_inst/O
+                         net (fo=1181, estimated)     1.442    14.777    fir/clk_100mhz_IBUF_BUFG
+    SLICE_X9Y20          FDRE                                         r  fir/mult_out_reg[4][12]/C
+                         clock pessimism              0.253    15.029    
+                         clock uncertainty           -0.035    14.994    
+    SLICE_X9Y20          FDRE (Setup_fdre_C_D)        0.029    15.023    fir/mult_out_reg[4][12]
+  -------------------------------------------------------------------
+                         required time                         15.023    
+                         arrival time                         -10.659    
+  -------------------------------------------------------------------
+                         slack                                  4.364    
+
+
+
+

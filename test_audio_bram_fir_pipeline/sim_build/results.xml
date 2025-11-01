@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1733860412" />
+    <testcase name="test_a" classname="test_simple_tl" file="/Users/cespalv/MIT/Sophomore Year/6.111/Labs/FinalProject/FPGAudioSphere/test_audio_bram_fir_pipeline/sim/test_simple_tl.py" lineno="14" time="4.00276780128479" sim_time_ns="1120070.001" ratio_time="279823.8760291029" />
+  </testsuite>
+</testsuites>

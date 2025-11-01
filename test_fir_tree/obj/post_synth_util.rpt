@@ -1,0 +1,37 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Dec  7 21:59:35 2024
+| Host         : eecs-digital-41 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_utilization -file obj/post_synth_util.rpt -hierarchical -hierarchical_depth 4
+| Design       : top_level
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|         Instance        |                       Module                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| top_level               |                                             (top) |       1027 |       1027 |       0 |    0 | 1155 |     16 |      1 |          8 |
+|   (top_level)           |                                             (top) |         12 |         12 |       0 |    0 |   49 |      0 |      0 |          0 |
+|   audio_samples_bram    |                 xilinx_single_port_ram_read_first |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   fir                   |                                        fir_filter |        999 |        999 |       0 |    0 | 1106 |      0 |      0 |          8 |
+|     (fir)               |                                        fir_filter |        696 |        696 |       0 |    0 |  824 |      0 |      0 |          8 |
+|     tree_stage_a        |                                  fir_tree_accum_8 |        130 |        130 |       0 |    0 |  116 |      0 |      0 |          0 |
+|     tree_stage_b        |                  fir_tree_accum_8__parameterized0 |        122 |        122 |       0 |    0 |  116 |      0 |      0 |          0 |
+|     tree_stage_c        |                                  fir_tree_accum_4 |         51 |         51 |       0 |    0 |   50 |      0 |      0 |          0 |
+|   hrir_left_coeff_brom  | xilinx_single_port_ram_read_first__parameterized0 |          0 |          0 |       0 |    0 |    0 |      8 |      0 |          0 |
+|   hrir_right_coeff_brom | xilinx_single_port_ram_read_first__parameterized1 |         16 |         16 |       0 |    0 |    0 |      8 |      0 |          0 |
++-------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+
+
